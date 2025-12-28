@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="app">
+        <main class="card" role="main">
+            <header class="card-header">
+                <h1>Pension tax helper</h1>
+                <p>Enter your pensions to see how much to set aside for income tax.</p>
+                <p class="hint">This tool estimates income tax only. State Pension and private pensions are taxable, but no National Insurance is due on pension income after State Pension age.</p> <!-- [web:1][web:4][web:6][web:9][web:12] -->
+            </header>
+
+            <form id="pension-form" novalidate>
+                <fieldset>
+                    <legend>Your pension details</legend>
+
+                    <div class="form-group">
+                        <label for="statePensionMonthly">
+                            State Pension amount (per month, before tax)
+                        </label>
+                        <input
+                            type="number"
+                            id="statePensionMonthly"
+                            name="statePensionMonthly"
+                            inputmode="decimal"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 850"
+                        >
+                        <p class="field-help">
+                            If you know a 4‑weekly amount, multiply it by 13 and enter the yearly figure below instead.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="privatePensionMonthly">
+                            Private / workplace pension (per month, before tax)
+                        </label>
+                        <input
+                            type="number"
+                            id="privatePensionMonthly"
+                            name="privatePensionMonthly"
+                            inputmode="decimal"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 300"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="otherIncomeYearly">
+                            Other taxable income (per year, before tax)
+                        </label>
+                        <input
+                            type="number"
+                            id="otherIncomeYearly"
+                            name="otherIncomeYearly"
+                            inputmode="decimal"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 1200"
+                        >
+                        <p class="field-help">
+                            Include things like part‑time earnings or other taxable pensions. 
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taxYear">
+                            Tax year
+                        </label>
+                        <select id="taxYear" name="taxYear">
+                            <option value="2025-26">2025/26</option>
+                            <option value="2026-27">2026/27</option>
+                        </select>
+                        <p class="field-help">
+                            Uses the standard personal allowance and income tax bands for the selected year. 
+                        </p>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="calculateBtn">
+                    Calculate tax
+                </button>
+            </form>
+
+            <section id="results" aria-live="polite">
+                <h2>Your estimated tax</h2>
+                <p id="annualTax">Yearly income tax: £0.00</p>
+                <p id="monthlySetAside">Suggested monthly amount to set aside: £0.00</p>
+                <p class="disclaimer">
+                    This is a simple estimate based on standard UK income tax rules for pension income and does not include National Insurance, which is not due on pension income after State Pension age. 
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/income-calc.js"></script>
+</body>
+</html>
