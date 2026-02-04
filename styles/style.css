@@ -63,12 +63,13 @@ button {
     color: #1f2933;
 }
 
-#annualTax, #monthlySetAside {
+#annualTax, #monthlySetAside, #totalIncome, #deductibles {
     font-size: 1.5rem;
     font-weight: 600;
     color: #059669;
     margin-bottom: 0.5rem;
-}
+    white-space:pre-line;
+  }
 
 .hint, .field-help, .disclaimer {
     font-size: 0.875rem;
