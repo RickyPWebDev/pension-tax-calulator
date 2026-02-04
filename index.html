@@ -45,7 +45,6 @@
                             type="number"
                             id="privatePensionMonthly"
                             name="privatePensionMonthly"
-                            inputmode="decimal"
                             min="0"
                             step="0.01"
                             placeholder="e.g. 300"
@@ -60,7 +59,6 @@
                             type="number"
                             id="otherIncomeYearly"
                             name="otherIncomeYearly"
-                            inputmode="decimal"
                             min="0"
                             step="0.01"
                             placeholder="e.g. 1200"
@@ -71,12 +69,35 @@
                     </div>
 
                     <div class="form-group">
+
+                         <label for="otherIncomeYearly">
+                            Costs i.e repair costs for rental properties
+                        </label>
+                        <input
+                            type="number"
+                            id="costs"
+                            name="costs"
+                            min="0"
+                            step="0.01"
+                            placeholder="e.g. 500"
+                        >
+                        <p class="field-help">
+                            Include things like part‑time earnings or other taxable pensions. 
+                        </p>
+                        
+
+
+            
+                    </div>
+
+                    <div class="form-group">
                         <label for="taxYear">
                             Tax year
                         </label>
                         <select id="taxYear" name="taxYear">
                             <option value="2025-26">2025/26</option>
                             <option value="2026-27">2026/27</option>
+                            <option value="2026-27">2027/28</option>
                         </select>
                         <p class="field-help">
                             Uses the standard personal allowance and income tax bands for the selected year. 
@@ -91,6 +112,8 @@
 
             <section id="results" aria-live="polite">
                 <h2>Your estimated tax</h2>
+                <p id="totalIncome">Yearly income: £0.00</p>
+                <p id="deductibles">Yearly deductibles: £0.00</p>
                 <p id="annualTax">Yearly income tax: £0.00</p>
                 <p id="monthlySetAside">Suggested monthly amount to set aside: £0.00</p>
                 <p class="disclaimer">
